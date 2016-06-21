@@ -1,0 +1,12 @@
+{
+  "name": "sbb-stagemarkt",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "*",
+    "grunt-express": "*",
+    "grunt-parallel": "^0.5.1",
+    "grunt-sass": "^1.2.0",
+    "grunt-contrib-sass": "*"
+  }
+}

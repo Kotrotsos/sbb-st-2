@@ -1,0 +1,840 @@
+
+
+
+$background-color-dark: #f6f6f6;
+$background-color-light: white;
+$primary: #c91b0e;
+$primary-hover: #f18700;
+
+/* FONTS */
+
+@font-face {
+  font-family: 'sanukotregular';
+  src: url('fonts/SanukWeb.eot');
+  src: url('fonts/SanukWeb.eot?#iefix') format('embedded-opentype'),
+       url('fonts/SanukWeb.woff') format('woff'),
+       url('fonts/SanukComp.ttf') format('truetype');
+}
+
+/* GENERAL BOOTSTRAP OVERRIDES */
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}   
+.btn:hover {
+  background-color: #d98618;
+  border-color: #d98618;
+  color: #000;
+} 
+.btn:focus, .btn:focus:active, .btn.active:focus, .btn.focus, .btn.focus:active, .btn.active.focus {
+  outline: 0 none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #000;
+} 
+.form-control, .form-control:focus {
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.fa {
+  font-size: 14px;
+  margin-right: 8px;
+}
+h2, h3, h4 {
+  font-size: 16px;
+  line-height: 1.42857;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+h2 {
+  font-weight: normal;
+}
+h4 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.text-muted {
+  color:  #666;
+}
+
+
+/* NAV BAR */
+
+h1 {
+  margin: 0;
+}
+.navbar-brand {
+  padding: 12px 0 12px 10px;
+}
+
+.navbar-default {
+  border: none;
+}
+
+.jumbotron.top {
+  background: #ab0f12;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#d98618), color-stop(100%,#c20016)); /* Chrome,Safari4+ */
+  background-image: -webkit-linear-gradient(135deg, #d98618 0%, #c20016 100%); /* Chrome10+,Safari5.1+ */
+  background-image: -moz-linear-gradient(45deg, #d98618 0%, #c20016 100%); /* FF3.6+ */
+  background-image: -ms-linear-gradient(45deg, #d98618 0%, #c20016 100%); /* IE10+ */
+  background-image: -o-linear-gradient(45deg, #d98618 0%, #c20016 100%); /* Opera 11.10+ */
+  background-image: linear-gradient(135deg, #d98618 0%, #c20016 100%); /* W3C */
+
+  margin-top: 50px; /* never hide under navbar */
+  min-height: 16px; /* for details page */
+  padding-top: 0;
+  /* cover the search form, but nothing else */
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  &.open {
+    height: 100px;
+  }
+}
+
+
+/* SEARCH SECTION */
+
+#srch-section .btn {
+  padding: 10px 16px 6px 8px; /* text alignment, very tight buttons */
+}
+#srch-section .btn-default {
+  color: #000;
+  background-color: #dbdbdb;
+  border-color: #dbdbdb;
+}
+#srch-section .btn-primary {
+  font-weight: bold;
+}
+#srch-section .btn-primary:hover {
+  background-color: #d98618;
+  border-color: #d98618;
+}
+#srch-section .btn-primary i {
+  margin-right: 4px; /* padding for search icon */
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  opacity: 1;
+}
+#srch-section .form-control {
+  padding: 10px 20px 6px 8px; /* text alignment, room for clear button */
+}
+#srch-section .form-control:focus {
+  border-color: #4199c5;
+  color: #000;
+}
+#srch-section {
+  position: relative;
+}
+#srch-section.overlay {
+  background-color: rgba(0,0,0,0.3);
+  margin-top: -86px;
+}
+#srch-form {
+  padding: 24px 5px 8px; /* 8 = 24 - padding .form-group */
+}
+#srch-section .btn-group {
+  width: 100%;
+}
+
+/* .srch-input */
+.srch-input::-ms-clear {
+    display: none; /* one clear button is enough */
+}
+
+/* .srch-clear icon, droplist icons */
+.srch-clear, .dropdown-toggle>i {
+  color: #ab0f12; /* .form-control color */
+  position: absolute;
+  right: 0;
+  top: 13px; /* (.form-control height 40 - fontsize 14)/2 */
+  cursor:  pointer;
+}
+.srch-clear, .dropdown-toggle:hover > i, .srch-clear, .dropdown-toggle:focus > i, .srch-clear, .dropdown-toggle:active > i {
+  color: #65090b;
+}
+
+/* #srch-loc */
+#split-list li > a { /* repeat style from bootstrap so nested ul's work */
+  clear: both;
+  color: #000;
+  display: block;
+  font-weight: normal;
+  line-height: 1.42857;
+  padding: 3px 20px;
+  white-space: nowrap;
+}
+#split-list li > a:hover,
+#split-list li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+
+/* group buttons */
+.no-gutter {
+  padding: 0;
+}
+.narrow-gutter {
+  padding-left: 5px;   /* .col-*-* padding */
+  padding-right: 5px;  /* .col-*-* padding */
+}
+.button-gutter {
+  padding-left: 21px;  /* .col-*-* padding */
+  padding-right: 5px;  /* .col-*-* padding */
+}
+
+#srch-section .left-inner-addon {
+  position: relative;
+}
+#srch-section .left-inner-addon input {
+  padding-left: 24px;
+}
+#srch-section .left-inner-addon i { /* marker icon */
+  position: absolute;
+  padding: 12px 8px;
+  pointer-events: none;
+  color: #666; /* .form-control placeholder color */
+  top: 0;
+}
+
+/* #srch-radius-btn */
+#srch-radius-btn {
+  text-align: left;
+}
+
+/* #srch-country-btn */
+#srch-section #srch-country-btn {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 16px;
+  background-color: #fff;
+  border-color: #fff;
+}
+.dropdown-menu {
+  margin: 12px 0 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+.dropdown-menu:after { /* add arrow to dropdown menu */
+  content: ""; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-bottom: 10px solid #fff;         /* arrow height (on top) body colour */
+  border-right: 20px solid transparent;   /* arrow width */
+  border-left: 20px solid transparent;    /* arrow width */
+  position: absolute;
+  top: -10px;                             /* above menu */
+  right: 40px;                            /* position relative to rights side of menu box */
+  margin-top: 1px;                        /* border width: relative position to :before */
+  margin-left: -20px;                     /* arrow width */
+}
+.dropdown-menu:before { 
+  content: ""; 
+  display: block; 
+  width: 0; 
+  height: 0;
+  border-bottom: 10px solid #dbdbdb;      /* arrow height (on top) border colour */
+  border-right: 20px solid transparent;   /* arrow width */
+  border-left: 20px solid transparent;    /* arrow width */
+  position: absolute;
+  top: -10px;                             /* above menu */
+  right: 40px;                            /* position relative to rights side of menu box */
+  margin-top: 0;                          /* border width: relative position to :after */
+  margin-left: -20px;                     /* arrow width */
+}
+
+/* #srch-rad-drpmnu */
+/* #srch-country-drpmnu */
+.dropdown-menu li.more  {
+  color: #ab0f12;
+  padding: 3px 20px; /* bootstrap:.dropdown-menu > li > a */
+  cursor: pointer;
+}
+.dropdown-menu li.xtra { /* see stagemarkt.js */
+  display: none;
+}
+.dropdown-menu .divider { 
+  clear: both; /* ensure divider is visible after sub lists */
+}
+.dropdown-header {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+/* button for filter pop-up */
+.btn-popup, .btn-popup:active, .btn-popup:focus, .btn-popup:focus:active {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+
+/* HOMEPAGE */
+
+/* homepage overall */
+.homepage {
+  background-color: #f1f1f1;
+}
+/* teaser boxes, also used in filter box */
+.box-header {
+  padding: 9px 15px 5px; 
+  background-color: #ab0f12;
+  color: #fff;
+}
+.box-header.light {
+  background-color: #c84118;
+}
+.box-header.lighter {
+  background-color: #c20016;
+}
+.box-header h3 {
+  font-weight: normal;
+  margin: 0;
+}
+.box-body {
+  background-color: #fff;
+  border: 1px solid #ab0f12;
+  padding: 0;
+}
+.box-body.light {
+  border: 1px solid #c84118;
+}
+.box-body.lighter {
+  border: 1px solid #c20016;
+}
+
+/* carousel */
+#stagemarkt .item > img {
+  width: 100%;
+}
+.carousel-control-area {
+  position: relative;
+  margin-top: 64px;
+}
+.carousel-inner {
+/*  left: 12.5%;
+  margin-left: -120px;
+  width: 125%;*/
+}
+.carousel-indicators li {
+  background-color:  #ce8081;
+  background-color: rgba(171, 15, 18, 0.5);
+  border: 0;
+  height: 12px;
+  width: 12px;
+  margin: 0 8px;
+}
+.carousel-indicators li.active {
+  background-color: #ab0f12;
+  margin: 0 8px;
+}
+
+
+/* pay-off */
+#pay-off {
+  margin: 46px auto;
+}
+#pay-off img {
+  width: 100%;
+}
+
+/* tips section */
+#tips-box {
+  font-size: 16px;
+}
+
+#tips-box > div {
+  margin: 0;
+}
+#tips-box .hdr {
+  background-color: #dbdbdb;
+}
+#tips-box .bdy {
+  background-color: #fff;
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+#tips-box .bdy .media {
+  margin-top: 24px;
+  padding-left: 16px;
+}
+
+/* teasers */
+#teasers.jumbotron {
+  padding-top: 56px;
+  padding-bottom: 72px;
+  font-size: 16px;
+  background-color: #f1f1f1;
+  margin-bottom: 0;
+}
+#teasers.mobile {
+  margin-top: 16px;
+  padding-bottom: 64px;
+}
+#teasers .box-group {
+  margin-bottom: 16px;
+}
+#teasers  p { /* jumbotron override */
+  font-size: 14px;
+  padding: 8px 16px;
+  margin-bottom: 0;
+}
+#teasers img {
+  width: 100%;
+}
+#teasers button {
+  font-size: 16px;
+  margin: 16px;
+}
+#teasers h3 {
+  font-size: 17.5px;
+}
+
+/* footer */
+.jumbotron.bottom {
+  background-color: #684400;
+  color: #eee;
+  padding: 4px 0;
+  margin-bottom: 0;
+}
+.jumbotron.bottom p {
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 7px 0 0;
+  margin-bottom: 0;
+}
+.jumbotron.bottom img {
+  height: 34px;
+  vertical-align: top;
+}
+
+
+/* BRANCH AND SORT */
+
+#branch-sort {
+  margin-top: 56px;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+#branch-sort.mobile {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+/* title with results details */
+#results-title {
+  font-size: 22px;
+}
+#results-title span {
+  font-weight: bold;
+}
+#results-title span.loc {
+  font-weight: normal;
+}
+
+/* radios */
+#sel-branch label span span {
+  font-weight: bold;
+}
+#sel-branch label span.lbl {
+  color: #000;
+}
+
+/* droplist dropdown */
+.droplist .dropdown .dropdown-toggle {
+  min-width: inherit;
+  background-color: transparent;
+  width: auto;
+  padding-right: 30px;
+  font-size: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.droplist .dropdown-toggle > i {
+  top: 4px;
+}
+.droplist .dropdown-menu {
+  font-size: 16px;
+  margin: 10px 0 0;
+}
+.droplist .btn {
+  color: #ab0f12;
+}
+.droplist .btn:focus, .droplist .btn:hover, .droplist .btn:active, .droplist .btn.active {
+  box-shadow: none;
+  border-color: #fff;
+  color: #65090b;
+  text-decoration: underline;
+}
+.droplist label {
+  font-weight: normal;
+}
+
+
+/* FILTER PANEL */
+
+.modal-content { /* modal dialog (xs only) */
+  margin-top: 56px; /* give room to outside close button at top */
+  margin-bottom: 104px; /* give room to outside close button at bottom */
+  box-shadow: none;
+  border: 0;
+}
+.modal-body {
+  font-size: 16px;
+}
+.modal-footer {
+  text-align: left;
+  padding: 0;
+  border: 0;
+}
+.modal-header button, .modal-header button:hover { /* close button at top */
+  position: absolute;
+  right: 0;
+  top: -32px;
+  opacity: 1;
+  text-shadow: none;
+  font-size: 14px;
+}
+.modal-body form > div {
+  padding: 16px 15px;
+}
+.modal-body form > div + div { /* divider */
+  border-top: 1px solid #dbdbdb;
+}
+.modal-body .form-group {
+  margin-bottom: 0;
+}
+.modal-footer button { /* close button at top */
+  position: absolute;
+  left: 0;
+  margin-top: 24px;
+}
+.modal-body .more { /* more link in professions section */
+  margin:  0 -10px 16px 4px;
+  display: inline-block;
+  cursor: pointer;
+}
+.modal-body .more i { /* plus sign */
+  margin-right: 10px;
+}
+
+
+/* RESULTS TABLE */
+
+#results-list {
+  font-size: 16px;
+}
+
+/* table heading section */
+.table-header {
+  background-color: #f1f1f1;
+}
+
+/* results table */
+.results-col .row div + div {
+  /*text-align: right;*/
+}
+
+/* results item */
+.results-col .item {
+  border-bottom: 1px solid #dbdbdb;
+  padding: 16px 0;
+}
+.results-col p {
+  margin: 0;
+}
+/* vertically center second column */
+.results-col .item > div + div > div {
+  line-height: 90px; /* ~ 4 lines 16px*1.4 */
+  white-space: nowrap;
+}
+
+/* results item; not available */
+.na a {
+  color: inherit;
+}
+.na a:hover, a:focus {
+  text-decoration: none;
+  outline: none !important;
+}
+.popover {
+  width: 300px;
+}
+.popover-content {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .5);
+}
+.popover.bottom > .arrow {
+  top:  -20px; /* 20px is arrow size */
+}
+
+/* page controls */
+.pagination > li > a, .pagination > li > span {
+  padding: 4px 6px 2px;
+  margin: 0 2px;
+  border: 1px solid #dbdbdb;
+  color: #666;
+}
+.pagination > li > span {
+  border: 0;
+}
+.pagination > li > span:hover, .pagination > li > span:focus {
+  color: #666;
+}
+.pagination > li > a:hover, .pagination > li > a:focus {
+  color: #fff;
+  background-color: #ab0f12;
+  border: 1px solid #ab0f12;
+}
+.pagination > .active > a,  .pagination > .active > a:hover,  .pagination > .active > a:focus {
+  background-color: #c84118;
+  border-color: #c84118;
+  color: #fff;
+}
+.pagination > li.total > a:before {
+  content: "van ";
+  display:inline-block;
+  text-decoration: none;
+  border: 0;
+  margin: 0 16px 0 0;
+}
+.pagination.visible-xs-inline {
+  display: inline-table;
+  margin-top: 0;
+}
+.fa.fa-angle-double-right, .fa.fa-angle-right { /* only time when icon is behind, not in front of text */
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+
+/* DETAILS */
+
+/* pager */
+.pager {
+  font-size: 16px;
+  margin:  16px 0;
+}
+.pager li > a, .pager li > span {
+  padding: 5px 8px;
+}
+.pager li > a:hover, .pager li > a:focus {
+  text-decoration: underline;
+}
+
+/* heading */
+.page-header {
+  margin:  24px 0 8px 13px;
+  border-bottom: 0;
+}
+.page-header h2 {
+  font-size:  28px;
+  font-weight: bold;
+}
+
+/* details table */
+#details-table {
+  font-size: 16px;
+  margin-bottom: 104px;
+}
+#details-table.mobile .crebo:after {
+  content: ","
+}
+#details-table.mobile .level:before {
+  content: "Niveau "
+}
+#details-table a.toggle {
+  font-weight: bold;
+  cursor: pointer;
+}
+#details-table a.toggle::before {
+  font-family: FontAwesome;
+  font-size: 14px;
+  content: "\f054";
+  padding-right: 4px;
+  margin-left: -14px;
+  text-decoration: none;
+  display: inline-block;
+}
+#details-table a.toggle.open::before {
+  content: "\f078";
+  padding-right: 0px;
+  margin-left: -14px;
+}
+#details-table a.toggle.closed::before {
+  content: "\f054";
+  padding-right: 2px;
+  margin-left: -12px;
+}
+#details-table a.toggle:before:hover {
+  text-decoration: none;
+}
+
+#details-table .table-row {
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+#details-table .table-row.job {
+  padding-top: 8px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #dbdbdb;
+}
+#details-table .job > div {
+  margin-bottom: 8px;
+}
+#details-table .job > div.prmpt {
+  margin-bottom: 0;
+}
+#details-table .table-header {
+  /*margin-top: 16px; not sure if this is mistake in sketch file */
+}
+.crebo, .level, .prmpt { /* de-emphasize prompt text, and less important information */
+  color: #666;
+  white-space: nowrap; /* make sure "," and "Niveau " additions stay on same line on small screens */
+}
+#details-table a.social {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 1px solid #ab0f12;
+  text-align: center;
+  margin-top: 16px;
+  margin-right: 21px;
+}
+#details-table a.social:hover {
+  border: 1px solid #65090b;
+}
+#details-table a.social .fa {
+  font-size: 21px;
+  margin-top: 6px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+#details-table #teach-body {
+  margin: 16px -13px 0; /* counter bootstrap row! */
+}
+#teach-body .droplist li { /* items will wrap otherwise, this makes it not usable on mobile devices */
+  padding: 3px 15px;
+  white-space: nowrap;
+}
+.mobile #teach-body .droplist li { /* not optimal on mobile, but still readable */
+  white-space: inherit;
+  width: 300px;
+}
+#teach-body .table-row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* RADIOS & CHECKBOXES */
+
+/* Hiding default checkbox and radio */
+input[type=checkbox],input[type=radio] {
+  opacity: 0;
+  position: absolute;
+  z-index: 12;
+  width: 19px; /* control size */
+  height: 19px; /* control size */
+} 
+input[type=checkbox]+.lbl,input[type=radio]+.lbl {
+  position: relative;
+  z-index: 11;
+  display: inline-block;
+  margin: 0;
+  color: #666;
+  line-height: 19px; /* control size */
+  min-height: 19px; /* control size */
+  min-width: 19px; /* control size */
+  font-weight: normal;
+}
+.radio label, .checkbox label { /*  override from .radio label, .checkbox label */
+  padding-left: 30px; 
+  min-height: 21px;
+}
+.radio + .radio, .checkbox + .checkbox { /* finger sizes */
+  margin-top: 11px; /* 16px between labels -5px for control */
+}
+/* basic checkbox */
+input[type=checkbox]+.lbl::before,input[type=radio]+.lbl::before {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-size: 13px;
+  color: #ab0f12;
+  /*background-color: #f1f1f1;*/
+  content: " "; /* Open Circle: \f10c */
+  /* circle/box definition */
+  border: 2px solid #ab0f12;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  height: 19px;         /* control size */
+  line-height: 15px;    /* position of glyph inside box */
+  padding-left: 0;      /* horizontal positioning */
+  min-width: 19px;      /* control size: has to be equal to height */
+  margin-right: 10px;   /* change margin btwn control and label */
+  margin-left: -30px;   /* neg. same as padding-left of .lbl self */
+  margin-top: -2px;     /* relative to text */
+}
+
+/* radio override */ /* check-pill override*/
+input[type=radio]+.lbl::before, .check-pill input[type=checkbox]+.lbl::before {
+  font-size: 10px;
+  border-radius: 19px; /* control size */
+}
+
+/* checked state */
+
+input[type=checkbox]:checked+.lbl::before,input[type=radio]:checked+.lbl::before {
+  display: inline-block;
+  content: "\f00c";
+  background-color: #fff;
+  border-color: #ab0f12;
+}
+/* radio override */
+input[type=radio]:checked+.lbl::before {
+  content: "\f111";
+  /* Replace with f111 for a Solid Circle */
+  /* Replace with f00c for a Check Mark */
+}
+/* check-pill override*/
+.check-pill input[type=checkbox]:checked + .lbl::before {
+  content: "\f00d"; /* close */
+  font-size: 14px;
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+/* hover state */
+input[type=checkbox]:hover+.lbl::before,input[type=radio]:hover+.lbl::before,input[type=checkbox]+.lbl:hover::before,input[type=radio]+.lbl:hover::before {
+  border-color: #65090b;
+}
+
+.radio-sel {
+  background: #f1f1f1;
+  padding: 10px 15px;
+  margin: 10px -15px; /* padding of box */
+  display: block;
+  
+}
+
+/* GOOGLE MAP */
+
+#map {
+  height: 368px;
+  background-color: #f1f1f1;
+}
+
+
+/* */
+
+.body-background {
+  background-color: $background-color-dark;
+}
+
+.container-background {
+  background-color: $background-color-light;
+}
